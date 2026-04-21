@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>UNI ELECTRIC | Premium Solar & Electrical Solutions Pakistan</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1A2C3E;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        /* Color Palette */
+        :root {
+            --primary: #0F2B3D;
+            --primary-dark: #071D2B;
+            --accent: #2E7D64;
+            --accent-dark: #E09510;
+            --secondary-green: #2E7D64;
+            --gray-bg: #F8FAFE;
+            --gray-light: #EFF3F8;
+            --text-dark: #1A2C3E;
+            --text-muted: #5A6E7F;
+            --white: #FFFFFF;
+            --shadow-sm: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 20px 35px -12px rgba(0, 0, 0, 0.08);
+            --border-radius: 24px;
+            --border-radius-sm: 18px;
+        }
+
+        html {
+            scroll-padding-top: 90px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, .logo, .nav-links a, .btn {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .section-subhead {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            max-width: 650px;
+            margin: 0 auto 3rem auto;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.9rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            transition: all 0.25s ease;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(15, 43, 61, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 22px -8px rgba(15, 43, 61, 0.3);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .btn-outline:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-accent {
+            background: var(--accent);
+            color: #1A2C3E;
+            font-weight: 700;
+        }
+
+        .btn-accent:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Header & Navigation */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.03);
+            z-index: 1000;
+            padding: 0.9rem 0;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .logo p {
+            font-size: 0.7rem;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            color: var(--accent);
+            margin-top: -5px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: var(--text-dark);
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .section-bg-light {
+            background-color: var(--gray-bg);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 4rem 0 5rem 0;
+            background: linear-gradient(135deg, #F9FCFE 0%, #FFFFFF 100%);
+        }
+
+        .hero-grid {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-badge {
+            background: rgba(245, 166, 35, 0.12);
+            color: var(--accent-dark);
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            border-radius: 60px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3.4rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Trust Stats */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            flex: 1;
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius-sm);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            font-size: 2.3rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        /* Cards */
+        .services-grid, .projects-grid, .testimonials-grid, .review-media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .service-card, .project-card, .testimonial-card {
+            background: white;
+            border-radius: var(--border-radius-sm);
+            padding: 2rem 1.5rem;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .service-card:hover, .project-card:hover, .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--accent);
+            margin-bottom: 1.2rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            border-radius: 16px;
+            margin-bottom: 1rem;
+        }
+
+        .project-location {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            text-align: left;
+        }
+
+        .stars {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .customer-name {
+            font-weight: 700;
+            margin-top: 1rem;
+        }
+
+        /* Before/After showcase */
+        .beforeafter {
+            background: var(--gray-bg);
+            border-radius: 28px;
+            padding: 1.8rem;
+            text-align: center;
+            margin: 3rem 0 1rem;
+        }
+
+        .ba-grid {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .ba-card {
+            flex: 1;
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+
+        /* Contact Form & Map */
+        .contact-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+        }
+        .contact-info, .contact-form {
+            flex: 1;
+        }
+        .contact-details {
+            margin-top: 1.5rem;
+        }
+        .contact-details li {
+            list-style: none;
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            align-items: center;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #E2E8F0;
+            border-radius: 20px;
+            font-family: inherit;
+            transition: 0.2s;
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(245,166,35,0.2);
+        }
+        .map-container {
+            border-radius: 24px;
+            overflow: hidden;
+            margin-top: 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 20px;
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            border: 1px solid var(--gray-light);
+        }
+        .faq-question {
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: 0.3s;
+            color: var(--text-muted);
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            margin-top: 0.8rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #eef2f5;
+            padding: 3rem 0 1.5rem;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 1.2rem;
+        }
+        .footer-col a, .footer-col p {
+            color: #CBD5E1;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.6rem;
+            transition: 0.2s;
+        }
+        .social-icons a {
+            display: inline-block;
+            margin-right: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* floating buttons */
+        .float-wa {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+            transition: 0.2s;
+            z-index: 99;
+            text-decoration: none;
+        }
+      
+        @media (max-width: 550px) {
+            .float-wa { width: 50px; height: 50px; font-size: 1.6rem; }
+        }
+        .float-wa:hover { transform: scale(1.05); }
+
+        /* Reveal animation */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.7s cubic-bezier(0.2, 0.9, 0.4, 1.1), transform 0.7s ease;
+        }
+        .fade-up.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+   /* ================= PREMIUM MOBILE (TABLET + PHONE) ================= */
+@media (max-width: 768px) {
+
+    section {
+        padding: 2.8rem 0;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    /* NAVBAR PREMIUM */
+    .mobile-menu {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: rgba(255,255,255,0.96);
+        backdrop-filter: blur(14px);
+        padding: 1.5rem;
+        gap: 1rem;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+        animation: slideDown 0.3s ease;
+    }
+
+    @keyframes slideDown {
+        from { transform: translateY(-20px); opacity: 0; }
+        to { transform: translateY(0); opacity: 1; }
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 0.9rem;
+        border-radius: 12px;
+    }
+
+    .nav-links a:hover {
+        background: var(--gray-bg);
+    }
+
+    /* HERO PREMIUM */
+    .hero {
+        padding: 1.5rem 0 2rem;
+    }
+
+    .hero-grid {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.5rem;
+    }
+
+    .hero-image {
+        order: -1;
+    }
+
+    .hero-image img {
+        max-height: 220px;
+        border-radius: 28px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.8rem;
+        line-height: 1.35;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    /* BUTTONS */
+    .btn-group {
+        flex-direction: column;
+        gap: 0.7rem;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+        border-radius: 14px;
+    }
+
+    /* STATS PREMIUM CARDS */
+    .stats-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .stat-item {
+        padding: 1rem;
+        border-radius: 16px;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    /* CARDS PREMIUM */
+    .services-grid,
+    .projects-grid,
+    .testimonials-grid,
+    .review-media-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+    }
+
+    .service-card,
+    .project-card,
+    .testimonial-card {
+        padding: 1.3rem;
+        border-radius: 18px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    }
+
+    .project-card img {
+        height: 160px;
+        border-radius: 14px;
+    }
+
+    /* BEFORE AFTER */
+    .ba-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* CONTACT */
+    .contact-grid {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    input, textarea {
+        padding: 0.85rem;
+        font-size: 0.95rem;
+        border-radius: 14px;
+    }
+
+    /* TYPOGRAPHY */
+    h2 {
+        font-size: 1.6rem;
+        line-height: 1.3;
+    }
+
+    .section-subhead {
+        font-size: 0.9rem;
+    }
+}
+
+
+/* ================= EXTRA SMALL (PREMIUM COMPACT) ================= */
+@media (max-width: 480px) {
+
+    .logo h1 {
+        font-size: 1.2rem;
+    }
+
+    .logo p {
+        font-size: 0.6rem;
+    }
+
+    .hero-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .hero-image img {
+        max-height: 190px;
+    }
+
+    .btn {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    .float-wa {
+        width: 48px;
+        height: 48px;
+        font-size: 1.4rem;
+        right: 12px;
+        bottom: 18px;
+    }
+.mobile-menu {
+    display: none;
+}
+}
+@media (max-width: 768px) {
+    .mobile-menu {
+        display: block;
+    }
+}
+
+/* Touch Premium Feel */
+.btn:active {
+    transform: scale(0.96);
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>UNI ELECTRIC</h1>
+                <p>(SMC-PRIVATE) LIMITED</p>
+            </div>
+            <div class="mobile-menu" id="mobileMenuBtn"><i class="fas fa-bars"></i></div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#reviews">Reviews</a>
+                <a href="#contact">Contact</a>
+                <a href="#contact" class="btn btn-primary" style="padding: 0.5rem 1.2rem;">Free Quote</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-content fade-up">
+                    <div class="hero-badge"><i class="fas fa-solar-panel"></i> Pakistan’s Trusted Energy Partner</div>
+                    <h1>Power Your Future With <span style="color:var(--accent)">Solar & Electrical</span> Excellence</h1>
+                    <p>UNI ELECTRIC delivers premium on-grid, off-grid, and industrial electrical solutions. Reduce bills, increase reliability, and go green with official SMC-Private Limited expertise.</p>
+                    <div class="btn-group">
+                        <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+                        <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%20I%20want%20a%20free%20solar%20consultation%20and%20quotation.%20Please%20guide%20me." class="btn btn-outline" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp Now</a>
+                    </div>
+                </div>
+                <div class="hero-image fade-up" style="flex:0.9;">
+                    <img src="https://placehold.co/600x500/0F2B3D/white?text=Solar+Installation+Experts" alt="Solar Panels" style="width:100%; border-radius: 40px; box-shadow: var(--shadow-md);">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Counters -->
+        <div class="container" style="margin-top: -2rem; margin-bottom: 1rem;">
+            <div class="stats-grid fade-up">
+                <div class="stat-item"><div class="stat-number">4+</div><div>Years Experience</div></div>
+                <div class="stat-item"><div class="stat-number">100+</div><div>Projects Completed</div></div>
+                <div class="stat-item"><div class="stat-number">1MW+</div><div>Installations Delivered</div></div>
+                <div class="stat-item"><div class="stat-number">24/7</div><div>Support & Maintenance</div></div>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <section id="about" class="section-bg-light">
+            <div class="container fade-up">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <h2>About UNI ELECTRIC</h2>
+                    <p style="font-size: 1.1rem;">As an SMC-Private Limited enterprise, we engineer high-performance solar systems and electrical infrastructure for residential, commercial, and industrial sectors across Pakistan. Our mission combines innovation, integrity, and unmatched professionalism — ensuring every client experiences sustainable energy independence.</p>
+                    <div style="display: flex; justify-content: center; gap: 1.5rem; margin-top: 2rem; flex-wrap: wrap;">
+                        <span><i class="fas fa-certificate" style="color:var(--accent);"></i> ISO Certified</span>
+                        <span><i class="fas fa-shield-alt"></i> Licensed & Insured</span>
+                        <span><i class="fas fa-trophy"></i> Top Rated Solar Partner</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section id="services">
+            <div class="container">
+                <div class="fade-up" style="text-align: center;">
+                    <h2>Comprehensive Energy & Electrical Services</h2>
+                    <div class="section-subhead">Tailored solutions for every need — from rooftop solar to heavy industrial switchgear.</div>
+                </div>
+                <div class="services-grid fade-up">
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-solar-panel"></i></div><h3>Hybrid Off-grid Solar</h3><p>Battery-backed independence, ideal for areas with load shedding.</p></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-plug"></i></div><h3>On-grid Solar Systems</h3><p>Net metering ready, reduce electricity bills up to 80%.</p></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-charging-station"></i></div><h3>Net Metering</h3><p>Complete documentation & grid synchronization.</p></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-home"></i></div><h3>Residential Solar</h3><p>Custom designs for villas and housing societies.</p></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-building"></i></div><h3>Commercial Solar</h3><p>Maximize ROI for offices, factories & warehouses.</p></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-industry"></i></div><h3>Industrial Solar</h3><p>High-voltage systems for heavy industries.</p></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-bolt"></i></div><h3>Electrical Installations</h3><p>Wiring, panels, UPS, earthing, fire alarms, CCTV, networking.</p></div>
+                    <div class="service-card"><div class="service-icon"><i class="fas fa-microchip"></i></div><h3>Switchgear Fabrication</h3><p>Customized LT panels, power distribution, protection systems.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Gallery -->
+        <section id="projects" class="section-bg-light">
+            <div class="container">
+                <div class="fade-up" style="text-align: center;">
+                    <h2>Our Solar & Electrical Portfolio</h2>
+                    <div class="section-subhead">Real installations across Pakistan — proven performance.</div>
+                </div>
+                <div class="projects-grid fade-up">
+                    <div class="project-card"><img src="https://placehold.co/600x400/2E7D64/white?text=Commercial+Solar" alt="Project"><h3>Green Horizon Tower</h3><div class="project-location">Lahore | 120kW On-Grid</div><p>Annual energy savings 180,000 kWh, net metering approved.</p></div>
+                    <div class="project-card"><img src="https://placehold.co/600x400/F5A623/white?text=Industrial+Solar" alt="Project"><h3>Faisalabad Textile Mills</h3><div class="project-location">Faisalabad | 350kW Hybrid</div><p>Reduced diesel dependency, 45% lower energy costs.</p></div>
+                    <div class="project-card"><img src="https://placehold.co/600x400/0F2B3D/white?text=Residential+Solar" alt="Project"><h3>Defence Residencia</h3><div class="project-location">Karachi | 25kW Off-grid</div><p>Complete backup with lithium batteries & smart monitoring.</p></div>
+                    <div class="project-card"><img src="https://placehold.co/600x400/2E7D64/white?text=Switchgear" alt="Switchgear"><h3>Industrial Switchgear</h3><div class="project-location">Lahore | LV Panel Fabrication</div><p>Custom assembly & protection for automotive factory.</p></div>
+                </div>
+                <!-- Before/After extra showcase -->
+                <div class="beforeafter fade-up">
+                    <h3 style="margin-bottom: 1rem;">⚡ Before & After: Solar Transformation</h3>
+                    <div class="ba-grid">
+                        <div class="ba-card"><img src="https://placehold.co/400x240/cccccc/black?text=Before:+High+Electricity+Bills" style="width:100%"><p>Before: PKR 250k/month utility</p></div>
+                        <div class="ba-card"><img src="https://placehold.co/400x240/2E7D64/white?text=After:+Solar+Savings" style="width:100%"><p>After: 75% reduction + Net Metering</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Reviews & Video/Image Section -->
+        <section id="reviews">
+            <div class="container">
+                <div class="fade-up" style="text-align: center;">
+                    <h2>Customer Love</h2>
+                    <div class="section-subhead">Trusted by homeowners, businesses, and industries across Pakistan.</div>
+                </div>
+                <div class="testimonials-grid fade-up">
+                    <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"UNI ELECTRIC handled our net metering seamlessly. The team is extremely professional and after-sales support is outstanding."</p><div class="customer-name">— Ahmed R., Lahore</div></div>
+                    <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Industrial solar solution saved us millions. Their switchgear fabrication quality is world-class."</p><div class="customer-name">— Fatima Industries, Faisalabad</div></div>
+                    <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>"Best decision for our housing society. Reliable, transparent pricing and fast installation."</p><div class="customer-name">— Captain (R) Tariq, Islamabad</div></div>
+                </div>
+                <!-- Video / Image review section -->
+                <div class="review-media-grid fade-up" style="margin-top: 2rem;">
+                    <div class="testimonial-card" style="text-align: center;"><i class="fab fa-youtube fa-3x" style="color: #FF0000;"></i><h3>Video Reviews</h3><p>Watch real client experiences on our YouTube channel.</p><a href="https://youtube.com/channel/UCWKsGxko9AQQ8-gDi2KGgdQ" target="_blank" class="btn btn-outline" style="margin-top: 0.5rem;">Watch Now</a></div>
+                    <div class="testimonial-card" style="text-align: center;"><i class="fas fa-camera-retro fa-3x" style="color: var(--accent);"></i><h3>Project Galleries</h3><p>See high-resolution images of completed solar farms & electrical projects.</p><a href="https://www.google.com/maps/place/Unielectric+Pvt+Ltd/@31.2957487,74.2226327,40a,53.2y/data=!3m8!1e2!3m6!1sCIABIhClTKZQa8k-16Vdx5DjMfI4!2e10!3e12!6shttps:%2F%2Flh3.googleusercontent.com%2Fgps-cs-s%2FAPNQkAHKYYTJcEXCyUeM0vP2XecDTY0ixnpptrvTN24IRFhZWzW9_NxQnys1fXFt-pTJgGaHA_pLSDAh-lu645LHtxoq3s-vMg4A-oSfFa97XRbtyoPrfjxQcBrdIbUC_xO3MzUMKGWtPtXR3H2m%3Dw397-h298-k-no!7i1280!8i960!4m17!1m7!3m6!1s0x3919abb2dea41979:0xf1912d6282796882!2sUnielectric+Pvt+Ltd!8m2!3d31.2957487!4d74.2226897!16s%2Fg%2F11ylnnx18j!3m8!1s0x3919abb2dea41979:0xf1912d6282796882!8m2!3d31.2957487!4d74.2226897!10e5!14m1!1BCgIgAQ!16s%2Fg%2F11ylnnx18j?entry=ttu&g_ep=EgoyMDI2MDQxNS4wIKXMDSoASAFQAw%3D%3D" class="btn btn-outline">View Gallery</a></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact + Map + Form -->
+        <section id="contact" class="section-bg-light">
+            <div class="container">
+                <div class="fade-up" style="text-align: center;">
+                    <h2>Request a Free Solar Quote</h2>
+                    <div class="section-subhead">Our energy consultants reply within 2 hours.</div>
+                </div>
+                <div class="contact-grid fade-up">
+                    <div class="contact-info">
+                        <h3>Let's Talk Solar</h3>
+                        <ul class="contact-details">
+                            <li><i class="fas fa-phone-alt" style="font-size: 1.4rem; color: var(--accent);"></i> <span>+92 3171720966 &nbsp;|&nbsp; +92 3406577077</span></li>
+                            <li><i class="fas fa-envelope"></i> unielectricsales@gmail.com</li>
+                            <li><i class="fas fa-map-marker-alt"></i> Head Office: E105, Link 2, New Supper Town, Lahore</li>
+                            <li><i class="fas fa-location-dot"></i> Faisalabad: Shop 1, Noor Centre, Motor Market, Jhang Road</li>
+                            <li><i class="fab fa-facebook"></i> <a href="https://facebook.com/unielectricpakistan" target="_blank">/unielectricpakistan</a> &nbsp; <i class="fab fa-instagram"></i> <a href="https://instagram.com/unielectric_" target="_blank">@unielectric_</a></li>
+                        </ul>
+                        <div class="map-container" style="position:relative;">
+
+    <!-- Google Map Embed -->
+    <iframe 
+        src="https://www.google.com/maps?q=31.2957487,74.2226897&output=embed" 
+        width="100%" 
+        height="250" 
+        style="border:0;" 
+        loading="lazy">
+    </iframe>
+
+    <!-- Click Overlay -->
+    <a href="https://www.google.com/maps/search/?api=1&query=Unielectric+Pvt+Ltd" 
+       target="_blank"
+       style="position:absolute; top:0; left:0; width:100%; height:100%; z-index:10;">
+    </a>
+
+</div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="quoteForm">
+                            <div class="form-group"><input type="text" placeholder="Full Name" required></div>
+                            <div class="form-group"><input type="tel" placeholder="Phone Number" required></div>
+                            <div class="form-group"><input type="text" placeholder="City (Lahore, Faisalabad, etc)" required></div>
+                            <div class="form-group"><textarea rows="4" placeholder="Tell us about your project or requirement..." required></textarea></div>
+                            <button type="submit" class="btn btn-primary" style="width:100%;"><i class="fas fa-paper-plane"></i> Request Quote</button>
+                        </form>
+                        <p class="fade-up" style="margin-top: 1rem; font-size: 0.8rem; text-align: center;">✓ 100% free consultation | ✓ Site survey included</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="container" id="faq" style="padding: 2rem 0 4rem 0;">
+            <div class="fade-up" style="text-align: center;"><h2>Frequently Asked Questions</h2></div>
+            <div class="faq-grid fade-up">
+                <div class="faq-item"><div class="faq-question">How does net metering work in Pakistan? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">We handle all LESCO/MEPCO documentation, install bi-directional meters, and ensure you get credits for excess solar energy exported to the grid.</div></div>
+                <div class="faq-item"><div class="faq-question">What is the payback period for solar? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Typically 3-5 years based on current electricity rates, with system lifespan exceeding 25 years.</div></div>
+                <div class="faq-item"><div class="faq-question">Do you provide maintenance services? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes, AMC plans available for panel cleaning, inverter checks, and full electrical safety audits.</div></div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col"><h4>UNI ELECTRIC (SMC-PVT) LTD</h4><p>Premium solar & electrical engineering, trusted across Pakistan. Official SMC registered company.</p></div>
+                <div class="footer-col"><h4>Quick Links</h4><a href="#home">Home</a><a href="#services">Services</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div>
+                <div class="footer-col"><h4>Contact Info</h4><p><i class="fas fa-phone-alt"></i> +92 3171720966</p><p><i class="fas fa-envelope"></i> unielectricsales@gmail.com</p><div class="social-icons"><a href="https://facebook.com/unielectricpakistan" target="_blank"><i class="fab fa-facebook-f"></i></a><a href="https://instagram.com/unielectric_" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://linkedin.com/in/unielectric" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="https://youtube.com/channel/UCWKsGxko9AQQ8-gDi2KGgdQ" target="_blank"><i class="fab fa-youtube"></i></a></div></div>
+                <div class="footer-col"><h4>Official Website</h4><p>www.unielectricpvtltd.com</p><img src="https://placehold.co/120x50/FFFFFF/0F2B3D?text=Trusted+Partner" style="margin-top: 10px; border-radius: 12px;"></div>
+            </div>
+            <hr style="border-color: #2c4c64;"><p style="text-align: center; padding-top: 1.5rem;">© 2025 UNI ELECTRIC (SMC-PRIVATE) LIMITED — Powering Sustainable Tomorrow</p>
+        </div>
+    </footer>
+
+    <!-- Floating Buttons -->
+    <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%20I%20want%20a%20free%20solar%20consultation%20and%20quotation.%20Please%20guide%20me." class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        menuBtn.addEventListener('click', () => { navLinks.classList.toggle('active'); });
+        document.querySelectorAll('.nav-links a').forEach(link => { link.addEventListener('click', () => { navLinks.classList.remove('active'); }); });
+
+        // Smooth anchor
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const targetId = this.getAttribute('href');
+                if(targetId === "#") return;
+                const targetElem = document.querySelector(targetId);
+                if(targetElem) { e.preventDefault(); targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+
+        // FAQ toggle
+        document.querySelectorAll('.faq-item').forEach(item => {
+            item.addEventListener('click', () => { item.classList.toggle('active'); });
+        });
+
+        // Form Alert
+        const form = document.getElementById('quoteForm');
+        if(form) form.addEventListener('submit', (e) => { e.preventDefault(); alert('✅ Thank you! A UNI ELECTRIC solar expert will contact you shortly.'); form.reset(); });
+
+        // Scroll Reveal (Intersection Observer)
+        const fadeElements = document.querySelectorAll('.fade-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if(entry.isIntersecting) entry.target.classList.add('revealed'); });
+        }, { threshold: 0.1, rootMargin: "0px 0px -30px 0px" });
+        fadeElements.forEach(el => observer.observe(el));
+        // Force reveal on any visible already
+        window.dispatchEvent(new Event('scroll'));
+    </script>
+</body>
+</html>
