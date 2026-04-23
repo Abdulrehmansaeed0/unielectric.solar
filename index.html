@@ -259,7 +259,51 @@
             font-weight: 800;
             color: var(--accent);
         }
+/* ===== IMAGE GALLERY ===== */
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+}
 
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Hover Zoom */
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay */
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.8rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+/* Mobile optimization */
+@media (max-width: 768px) {
+    .gallery-item img {
+        height: 180px;
+    }
+}
         /* Cards */
         .services-grid, .projects-grid, .testimonials-grid, .review-media-grid {
             display: grid;
@@ -466,7 +510,7 @@
         }
       
         @media (max-width: 550px) {
-            .float-wa { width: 50px; height: 50px; font-size: 1.6rem; }
+            .float-wa { width: 60px; height: 60px; font-size: 1.6rem; }
         }
         .float-wa:hover { transform: scale(1.05); }
 
@@ -573,7 +617,73 @@
         justify-content: center;
         border-radius: 14px;
     }
+/* PREMIUM TESTIMONIAL DESIGN */
+.premium-card {
+    position: relative;
+    padding: 1.8rem;
+    border-radius: 22px;
+    transition: 0.3s;
+}
 
+/* TOP SECTION */
+.review-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1rem;
+}
+
+/* CLIENT LOGO */
+.client-logo {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    border-radius: 12px;
+    background: #fff;
+    padding: 5px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* CLIENT TYPE */
+.client-type {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* REVIEW TEXT */
+.review-text {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin: 0.8rem 0 1rem;
+    line-height: 1.6;
+}
+
+/* RESULT BADGE */
+.review-result {
+    background: rgba(46,125,100,0.1);
+    color: var(--accent);
+    padding: 0.5rem 0.9rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* QUOTE ICON EFFECT */
+.premium-card::before {
+    content: "“";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 3rem;
+    color: rgba(0,0,0,0.05);
+}
+
+/* HOVER EFFECT */
+.premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
     /* STATS PREMIUM CARDS */
     .stats-grid {
         flex-direction: column;
@@ -639,8 +749,23 @@
         font-size: 0.9rem;
     }
 }
+/* Ensure positioning */
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+}
 
-
+.review-logo {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: white;
+    padding: 3px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    border: 2px solid #eee;
+    flex-shrink: 0;
+}
 /* ================= EXTRA SMALL (PREMIUM COMPACT) ================= */
 @media (max-width: 480px) {
 
@@ -771,7 +896,14 @@
                 </div>
             </div>
         </section>
-
+         <!-- Strong -->  
+           <section style="background:linear-gradient(135deg, var(--primary), var(--accent)); color:white; text-align:center;">
+  <div class="container">
+    <h2 style="color:white;">Start Saving With Solar Today</h2>
+    <p style="margin-bottom:2rem;">Join hundreds of satisfied customers across Pakistan</p>
+    <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%20I%20want%20a%20free%20solar%20consultation%20and%20quotation.%20Please%20guide%20me." class="btn btn-accent">Get Free Consultation</a>
+  </div>
+</section>       
         <!-- Projects Gallery -->
         <section id="projects" class="section-bg-light">
             <div class="container">
@@ -785,6 +917,53 @@
                     <div class="project-card"><img src="https://placehold.co/600x400/0F2B3D/white?text=Residential+Solar" alt="Project"><h3>Defence Residencia</h3><div class="project-location">Karachi | 25kW Off-grid</div><p>Complete backup with lithium batteries & smart monitoring.</p></div>
                     <div class="project-card"><img src="https://placehold.co/600x400/2E7D64/white?text=Switchgear" alt="Switchgear"><h3>Industrial Switchgear</h3><div class="project-location">Lahore | LV Panel Fabrication</div><p>Custom assembly & protection for automotive factory.</p></div>
                 </div>
+                <!-- Premium Image Gallery Section -->
+<section id="gallery">
+    <div class="container">
+        
+        <div class="fade-up" style="text-align:center;">
+            <h2>Project Image Gallery</h2>
+            <div class="section-subhead">A closer look at our professional solar & electrical installations.</div>
+        </div>
+
+        <div class="image-gallery fade-up">
+            <div class="gallery-item">
+                <img src="image/Capture1.webp" alt="">
+                <div class="overlay">Industrial Solar Setup</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/Capture2.webp" alt="">
+                <div class="overlay">Installation Work</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/Capture3.webp" alt="">
+                <div class="overlay">Industrial Setup</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/Capture4.webp" alt="">
+                <div class="overlay">Solar Panels</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/Capture5.webp" alt="">
+                <div class="overlay">Switchgear</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/Capture6.webp" alt="">
+                <div class="overlay">Solar system for everyday use</div>
+            </div>
+
+            <div class="gallery-item">
+                <img src="image/Capture.webp" alt="">
+                <div class="overlay">Residential Solar</div>
+            </div>
+        </div>
+    </div>
+</section>
                 <!-- Before/After extra showcase -->
                 <div class="beforeafter fade-up">
                     <h3 style="margin-bottom: 1rem;">⚡ Before & After: Solar Transformation</h3>
@@ -803,11 +982,87 @@
                     <h2>Customer Love</h2>
                     <div class="section-subhead">Trusted by homeowners, businesses, and industries across Pakistan.</div>
                 </div>
-                <div class="testimonials-grid fade-up">
-                    <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"UNI ELECTRIC handled our net metering seamlessly. The team is extremely professional and after-sales support is outstanding."</p><div class="customer-name">— Ahmed R., Lahore</div></div>
-                    <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div><p>"Industrial solar solution saved us millions. Their switchgear fabrication quality is world-class."</p><div class="customer-name">— Fatima Industries, Faisalabad</div></div>
-                    <div class="testimonial-card"><div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div><p>"Best decision for our housing society. Reliable, transparent pricing and fast installation."</p><div class="customer-name">— Captain (R) Tariq, Islamabad</div></div>
-                </div>
+               <div class="testimonials-grid fade-up">
+
+    <!-- REVIEW 1 -->
+    <div class="testimonial-card premium-card">
+        
+        <div class="review-top">
+            <img src="image/Client logo1.webp" class="review-logo" alt="Client Logo">
+            <div>
+                <div class="customer-name">Cottonera Pvt. Ltd.</div>
+                <div class="client-type">Industrial Client • Lahore</div>
+            </div>
+        </div>
+
+        <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <p class="review-text">
+            UNI ELECTRIC handled our net metering seamlessly. The team is extremely professional and after-sales support is outstanding.
+        </p>
+
+        <div class="review-result">
+            ⚡ Result: PKR 1.5M yearly savings
+        </div>
+    </div>
+
+    <!-- REVIEW 2 -->
+    <div class="testimonial-card premium-card">
+        
+        <div class="review-top">
+            <img src="image/logo2.webp" class="review-logo" alt="Client Logo">
+            <div>
+                <div class="customer-name">Shamim Textile</div>
+                <div class="client-type">Industrial Client • Faisalabad</div>
+            </div>
+        </div>
+
+        <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+        <p class="review-text">
+            Installed 500kW solar system at Shamim Textile with excellent performance and major cost savings. The team is extremely professional
+        </p>
+
+        <div class="review-result">
+            ⚡ Result: PKR 2.5M yearly savings
+        </div>
+    </div>
+
+    <!-- REVIEW 3 -->
+    <div class="testimonial-card premium-card">
+        
+        <div class="review-top">
+            <img src="image/logo3.webp" class="review-logo" alt="Client Logo">
+            <div>
+                <div class="customer-name">Captain (R) Tariq</div>
+                <div class="client-type">Residential Client • Islamabad</div>
+            </div>
+        </div>
+
+        <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+
+        <p class="review-text">
+            Best decision for our home. Reliable, transparent pricing and fast installation. Excellent performance and major cost savings.
+        </p>
+
+        <div class="review-result">
+            ⚡ Result: 70% bill reduction
+        </div>
+    </div>
+    </div>
+
                 <!-- Video / Image review section -->
                 <div class="review-media-grid fade-up" style="margin-top: 2rem;">
                     <div class="testimonial-card" style="text-align: center;"><i class="fab fa-youtube fa-3x" style="color: #FF0000;"></i><h3>Video Reviews</h3><p>Watch real client experiences on our YouTube channel.</p><a href="https://youtube.com/channel/UCWKsGxko9AQQ8-gDi2KGgdQ" target="_blank" class="btn btn-outline" style="margin-top: 0.5rem;">Watch Now</a></div>
@@ -914,10 +1169,32 @@
             item.addEventListener('click', () => { item.classList.toggle('active'); });
         });
 
-        // Form Alert
         const form = document.getElementById('quoteForm');
-        if(form) form.addEventListener('submit', (e) => { e.preventDefault(); alert('✅ Thank you! A UNI ELECTRIC solar expert will contact you shortly.'); form.reset(); });
 
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const name = form.querySelector('input[placeholder="Full Name"]').value;
+    const phone = form.querySelector('input[placeholder="Phone Number"]').value;
+    const city = form.querySelector('input[placeholder="City (Lahore, Faisalabad, etc)"]').value;
+    const message = form.querySelector('textarea').value;
+
+    const whatsappMessage = `Hello UNI ELECTRIC!
+
+Name: ${name}
+Phone: ${phone}
+City: ${city}
+Requirement: ${message}`;
+
+    const whatsappURL = `https://wa.me/923171720966?text=${encodeURIComponent(whatsappMessage)}`;
+
+    // Optional nice alert
+  alert("🚀 Redirecting you to WhatsApp to complete your request!");
+
+    window.open(whatsappURL, "_blank");
+
+    form.reset();
+});
         // Scroll Reveal (Intersection Observer)
         const fadeElements = document.querySelectorAll('.fade-up');
         const observer = new IntersectionObserver((entries) => {
