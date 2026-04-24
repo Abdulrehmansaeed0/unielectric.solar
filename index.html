@@ -304,6 +304,98 @@
         height: 180px;
     }
 }
+/* ===== VISION SECTION ===== */
+.vision-section {
+    position: relative;
+    padding: 6rem 0 4rem;
+    background: linear-gradient(135deg, #0F2B3D, #2E7D64);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Floating Circle Logo */
+.vision-logo {
+    position: relative;
+    margin: 0 auto 1.5rem;
+    background: white;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.vision-logo img {
+    width: 75%;
+    height: 70%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Content */
+.vision-content h2 {
+    color: white;
+    margin-top: 2rem;
+}
+
+.vision-text {
+    max-width: 700px;
+    margin: 1rem auto 2.5rem;
+    color: rgba(255,255,255,0.85);
+    font-size: 1.1rem;
+}
+
+/* Cards */
+.vision-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.vision-card {
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    padding: 1.8rem;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.vision-card i {
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+    color: #F5A623;
+}
+
+.vision-card h3 {
+    margin-bottom: 0.5rem;
+}
+
+.vision-card p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Hover */
+.vision-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255,255,255,0.15);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .vision-logo {
+        width: 70px;
+        height: 70px;
+        top: -35px;
+    }
+
+    .vision-text {
+        font-size: 0.95rem;
+    }
+}
         /* Cards */
         .services-grid, .projects-grid, .testimonials-grid, .review-media-grid {
             display: grid;
@@ -524,7 +616,60 @@
             opacity: 1;
             transform: translateY(0);
         }
+/* ===== TESTIMONIAL SLIDER ===== */
+.testimonial-slider {
+    overflow: hidden;
+    position: relative;
+}
 
+.testimonial-track {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+
+.testimonial-card {
+    min-width: 33.333%;
+    padding: 1rem;
+}
+
+/* Dots */
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+.testimonial-dots {
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+.testimonial-dots span {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.testimonial-dots .active {
+    background: var(--accent);
+    width: 14px;
+    height: 10px;
+    border-radius: 20px;
+}
+.testimonial-card {
+    min-width: 100%;
+}
+
+@media (min-width: 769px) {
+    .testimonial-card {
+        min-width: 33.333%;
+    }
+}
    /* ================= PREMIUM MOBILE (TABLET + PHONE) ================= */
 @media (max-width: 768px) {
 
@@ -766,6 +911,90 @@
     border: 2px solid #eee;
     flex-shrink: 0;
 }
+/* ===== SOLAR SIZE SECTION ===== */
+.solar-size-section {
+    background: linear-gradient(135deg, #F8FAFE, #ffffff);
+    padding: 5rem 0;
+}
+
+/* GRID */
+.solar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.8rem;
+}
+
+/* CARD */
+.solar-card {
+    background: white;
+    padding: 2rem 1.5rem;
+    border-radius: 22px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.04);
+    position: relative;
+}
+
+/* HOVER EFFECT */
+.solar-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* TOP TITLE */
+.solar-top {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+/* LIST */
+.solar-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.solar-card ul li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 0.8rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ICON STYLE */
+.solar-card i {
+    color: var(--accent);
+}
+
+/* FEATURED CARD (center highlight) */
+.solar-card.featured {
+    border: 2px solid var(--accent);
+    transform: scale(1.05);
+}
+.appliance-icon {
+    width: 19px;              /* match Font Awesome visual size */
+    height: 38px;
+    display: inline-flex;     /* inline like <i> icons */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}.appliance-icon svg {
+    width: 20px;
+    height: 25px;
+    stroke: var(--accent);
+    stroke-width: 2.4;
+    fill: none;
+    display: block;
+}
+/* MOBILE */
+@media (max-width: 768px) {
+    .solar-card.featured {
+        transform: none;
+    }
+}
 /* ================= EXTRA SMALL (PREMIUM COMPACT) ================= */
 @media (max-width: 480px) {
 
@@ -855,9 +1084,9 @@
         <!-- Trust Counters -->
         <div class="container" style="margin-top: -2rem; margin-bottom: 1rem;">
             <div class="stats-grid fade-up">
-                <div class="stat-item"><div class="stat-number">4+</div><div>Years Experience</div></div>
-                <div class="stat-item"><div class="stat-number">100+</div><div>Projects Completed</div></div>
-                <div class="stat-item"><div class="stat-number">1MW+</div><div>Installations Delivered</div></div>
+                <div class="stat-item"><div class="stat-number">10+</div><div>Years Experience</div></div>
+                <div class="stat-item"><div class="stat-number">100000+</div><div>Projects Completed</div></div>
+                <div class="stat-item"><div class="stat-number">100MW+</div><div>Installations Delivered</div></div>
                 <div class="stat-item"><div class="stat-number">24/7</div><div>Support & Maintenance</div></div>
             </div>
         </div>
@@ -876,7 +1105,48 @@
                 </div>
             </div>
         </section>
+<section id="vision" class="vision-section">
+    <div class="container">
 
+        <!-- Floating Circle Logo -->
+        <div class="vision-logo">
+            <img src="image/unielectric logo.webp" alt="UNI ELECTRIC Logo">
+        </div>
+
+        <div class="vision-content fade-up">
+            <h2>Our Vision</h2>
+            <p class="vision-text">
+                To lead Pakistan’s energy transformation by delivering smart, sustainable, 
+                and future-ready solar & electrical solutions — empowering every home, 
+                business, and industry with clean, reliable power.
+            </p>
+        </div>
+
+        <!-- Vision Pillars -->
+        <div class="vision-grid fade-up">
+            
+            <div class="vision-card">
+                <i class="fas fa-leaf"></i>
+                <h3>Green Future</h3>
+                <p>Reducing carbon footprint with clean solar energy.</p>
+            </div>
+
+            <div class="vision-card">
+                <i class="fas fa-bolt"></i>
+                <h3>Smart Energy</h3>
+                <p>Advanced systems with intelligent performance.</p>
+            </div>
+
+            <div class="vision-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Growth & Impact</h3>
+                <p>Driving economic and industrial efficiency.</p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
         <!-- Services -->
         <section id="services">
             <div class="container">
@@ -896,6 +1166,144 @@
                 </div>
             </div>
         </section>
+<section class="solar-size-section">
+  <div class="container">
+
+    <div class="fade-up" style="text-align:center;">
+      <h2>Residential Solar System Size Guide</h2>
+      <p class="section-subhead">
+        Choose the perfect solar system based on your home usage and appliances.
+      </p>
+    </div>
+
+    <div class="solar-grid fade-up">
+
+      <!-- 2.4 KW -->
+      <div class="solar-card">
+        <div class="solar-top">2.4 kW</div>
+        <ul>
+          <li><i class="fas fa-bolt"></i> Basic Load</li>
+          <li><i class="fas fa-fan"></i> 5 Fans</li>
+          <li><i class="fas fa-lightbulb"></i> 4 Lights</li>
+        </ul>
+      </div>
+
+      <!-- 3 KW -->
+      <div class="solar-card featured">
+        <div class="solar-top">3 kW</div>
+        <ul>
+          <li><i class="fas fa-snowflake"></i> 1 Ton AC</li>
+          <li>
+  <span class="appliance-icon fridge-icon">
+    <svg viewBox="0 0 24 24">
+      <rect x="6" y="2" width="12" height="20" rx="2"></rect>
+      <line x1="6" y1="12" x2="18" y2="12"></line>
+      <line x1="9" y1="6" x2="9" y2="9"></line>
+      <line x1="9" y1="14" x2="9" y2="17"></line>
+    </svg>
+  </span> 1 Fridge</li>
+          <li><i class="fas fa-fan"></i> 4 Fans</li>
+          <li><i class="fas fa-lightbulb"></i> 10 LED Lights</li>
+        </ul>
+      </div>
+
+      <!-- 5 KW -->
+      <div class="solar-card">
+        <div class="solar-top">5 kW</div>
+        <ul>
+          <li><i class="fas fa-snowflake"></i> 1.5 Ton AC</li>
+         <li>
+  <span class="appliance-icon fridge-icon">
+    <svg viewBox="0 0 24 24">
+      <rect x="6" y="2" width="12" height="20" rx="2"></rect>
+      <line x1="6" y1="12" x2="18" y2="12"></line>
+      <line x1="9" y1="6" x2="9" y2="9"></line>
+      <line x1="9" y1="14" x2="9" y2="17"></line>
+    </svg>
+  </span> 1 Fridge</li>
+          <li><i class="fas fa-fan"></i> 5 Fans</li>
+          <li><i class="fas fa-lightbulb"></i> 10 LED Lights</li>
+        </ul>
+      </div>
+
+      <!-- 10 KW -->
+      <div class="solar-card">
+        <div class="solar-top">10 kW</div>
+        <ul>
+          <li><i class="fas fa-snowflake"></i> 2 AC Units</li>
+         <li>
+  <span class="appliance-icon fridge-icon">
+    <svg viewBox="0 0 24 24">
+      <rect x="6" y="2" width="12" height="20" rx="2"></rect>
+      <line x1="6" y1="12" x2="18" y2="12"></line>
+      <line x1="9" y1="6" x2="9" y2="9"></line>
+      <line x1="9" y1="14" x2="9" y2="17"></line>
+    </svg>
+  </span>
+  1 Fridge
+</li>
+          <li><i class="fas fa-fan"></i> 5 Fans</li>
+          <li><i class="fas fa-lightbulb"></i> 10+ Lights</li>
+        </ul>
+      </div>
+
+    </div>
+<div style="text-align:center; margin-top:2.5rem;">
+ <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%0A%0AI%20want%20a%20free%20Residential%20Solar%20System%20recommendation.%0A%0APlease%20guide%20me%20based%20on%20my%20home%20usage%20(2.4kW%20/%203kW%20/%205kW%20/%2010kW).%0A%0AThank%20you!" 
+class="btn btn-accent" target="_blank">
+Get Free System Recommendation
+</a>
+</div>
+  </div>
+</section>
+
+        <!-- PACKAGES -->
+        <section class="section-bg-light">
+  <div class="container">
+    <div style="text-align:center;">
+      <h2>Solar Packages</h2>
+      <div class="section-subhead">Affordable plans designed for every need</div>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Basic Home</h3>
+        <h2 style="color:var(--accent)">5kW</h2>
+        <p>Perfect for small homes</p>
+        <ul>
+          <li>✔ Tier-1 Panels</li>
+          <li>✔ Hybrid Inverter</li>
+          <li>✔ Installation</li>
+        </ul>
+        <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%20I%20am%20interested%20in%20your%205kW%20Basic%20Solar%20Package.%20Please%20share%20details,%20price,%20and%20installation%20process." class="btn btn-primary">Get Quote</a>
+      </div>
+
+      <div class="service-card" style="border:2px solid var(--accent); transform:scale(1.05);">
+        <h3>Popular</h3>
+        <h2 style="color:var(--accent)">10kW</h2>
+        <p>Best for families</p>
+        <ul>
+          <li>✔ Net Metering</li>
+          <li>✔ Smart Monitoring</li>
+          <li>✔ Battery Option</li>
+        </ul>
+        <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%20I%20am%20interested%20in%20your%2010kW%20Popular%20Solar%20Package.%20Please%20share%20complete%20details,%20pricing,%20and%20net%20metering%20info." class="btn btn-accent">Get Quote</a>
+      </div>
+
+      <div class="service-card">
+        <h3>Commercial</h3>
+        <h2 style="color:var(--accent)">25kW+</h2>
+        <p>For businesses & factories</p>
+        <ul>
+          <li>✔ ROI Optimization</li>
+          <li>✔ Custom Design</li>
+          <li>✔ Maintenance Plan</li>
+        </ul>
+        <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%20I%20am%20looking%20for%20a%2025kW%20or%20higher%20Commercial%20Solar%20System.%20Please%20guide%20me%20with%20quotation%20and%20ROI%20details." class="btn btn-primary">Contact Sales</a>
+      </div>
+    </div>
+  </div>
+</section>
          <!-- Strong -->  
            <section style="background:linear-gradient(135deg, var(--primary), var(--accent)); color:white; text-align:center;">
   <div class="container">
@@ -982,7 +1390,8 @@
                     <h2>Customer Love</h2>
                     <div class="section-subhead">Trusted by homeowners, businesses, and industries across Pakistan.</div>
                 </div>
-               <div class="testimonials-grid fade-up">
+               <div class="testimonial-slider fade-up">
+    <div class="testimonial-track">
 
     <!-- REVIEW 1 -->
     <div class="testimonial-card premium-card">
@@ -1061,6 +1470,64 @@
             ⚡ Result: 70% bill reduction
         </div>
     </div>
+    <!-- REVIEW 4 -->
+<div class="testimonial-card premium-card">
+    <div class="review-top">
+        <img src="image/jalwas_compressed.jpeg" class="review-logo">
+        <div>
+            <div class="customer-name">Jawas Flour Mill</div>
+            <div class="client-type">Industrial Client • Bahawalpur</div>
+        </div>
+    </div>
+     <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+    <p class="review-text">500kW solar system installed with excellent efficiency and strong ROI. System performance is excellent and stable.</p>
+    <div class="review-result">⚡ Result: High energy savings</div>
+</div>
+
+<!-- REVIEW 5 -->
+<div class="testimonial-card premium-card">
+    <div class="review-top">
+        <img src="image/images_compressed.jfif" class="review-logo">
+        <div>
+            <div class="customer-name">Qaiser & Javeed Mill</div>
+            <div class="client-type">Industrial Client • Kot Abdul Malik</div>
+        </div>
+    </div>
+      <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star-half-alt"></i>
+        </div>
+    <p class="review-text">300kW solar system delivering stable and reliable performance. Great quality work and timely delivery.</p>
+    <div class="review-result">⚡ Result: PKR 2.8M yearly savings</div>
+</div>
+
+<!-- REVIEW 6 -->
+<div class="testimonial-card premium-card">
+    <div class="review-top">
+        <img src="image/logo textile_compressed.jfif" class="review-logo">
+        <div>
+            <div class="customer-name">Alfalah Textile</div>
+            <div class="client-type">Industrial Client • Kot Abdul Malik</div>
+        </div>
+    </div>
+     <div class="stars">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+        </div>
+
+    <p class="review-text">500kW system installed with outstanding performance. Highly professional team with smooth installation process.</p>
+    <div class="review-result">⚡ Result: PKR 4.8M yearly savings</div>
+</div>
+    
+ </div><!-- DOTS -->
+    <div class="testimonial-dots"></div>
     </div>
 
                 <!-- Video / Image review section -->
@@ -1084,8 +1551,8 @@
                         <ul class="contact-details">
                             <li><i class="fas fa-phone-alt" style="font-size: 1.4rem; color: var(--accent);"></i> <span>+92 3171720966 &nbsp;|&nbsp; +92 3406577077</span></li>
                             <li><i class="fas fa-envelope"></i> unielectricsales@gmail.com</li>
-                            <li><i class="fas fa-map-marker-alt"></i> Head Office: E105, Link 2, New Supper Town, Lahore</li>
-                            <li><i class="fas fa-location-dot"></i> Faisalabad: Shop 1, Noor Centre, Motor Market, Jhang Road</li>
+                            <li><i class="fas fa-map-marker-alt"></i> 95A Government officers Co-operative housing society Raiwind Road Lahore.</li>
+                            <li><i class="fas fa-location-dot"></i> 473, Usman e Ghani Gm Abad Faisalabad.</li>
                             <li><i class="fab fa-facebook"></i> <a href="https://facebook.com/unielectricpakistan" target="_blank">/unielectricpakistan</a> &nbsp; <i class="fab fa-instagram"></i> <a href="https://instagram.com/unielectric_" target="_blank">@unielectric_</a></li>
                         </ul>
                         <div class="map-container" style="position:relative;">
@@ -1203,6 +1670,74 @@ Requirement: ${message}`;
         fadeElements.forEach(el => observer.observe(el));
         // Force reveal on any visible already
         window.dispatchEvent(new Event('scroll'));
+        
+    const track = document.querySelector('.testimonial-track');
+const cards = document.querySelectorAll('.testimonial-card');
+const dotsContainer = document.querySelector('.testimonial-dots');
+
+let index = 0;
+let slidesPerView = 1;
+let totalSlides = 0;
+let interval;
+
+function updateConfig() {
+    slidesPerView = window.innerWidth <= 768 ? 1 : 3;
+   if (window.innerWidth <= 768) {
+    totalSlides = 6;
+} else {
+    totalSlides = 2;
+}
+}
+
+function renderDots() {
+    dotsContainer.innerHTML = "";
+
+    for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement("span");
+        dot.addEventListener("click", () => goTo(i));
+        dotsContainer.appendChild(dot);
+    }
+}
+
+function updateDots() {
+    document.querySelectorAll(".testimonial-dots span").forEach((dot, i) => {
+        dot.classList.toggle("active", i === index);
+    });
+}
+
+function goTo(i) {
+    index = i;
+    track.style.transform = `translateX(-${i * 100}%)`;
+    updateDots();
+}
+
+function next() {
+    index++;
+
+    // 🔥 LOOP RESET (your requirement)
+    if (index >= totalSlides) {
+        index = 0;
+    }
+
+    goTo(index);
+}
+
+function start() {
+    clearInterval(interval);
+    interval = setInterval(next, 4000);
+}
+
+function init() {
+    updateConfig();
+    index = 0;
+    renderDots();
+    goTo(0);
+    start();
+}
+
+window.addEventListener("resize", init);
+init();
+
     </script>
 </body>
 </html>
