@@ -304,6 +304,86 @@
         height: 180px;
     }
 }
+
+/* ===== WHY CHOOSE US ===== */
+.why-section {
+    position: relative;
+    padding: 6rem 0;
+    background: linear-gradient(135deg, #ffffff, #F8FAFE);
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Floating Diamond Logo (DIFFERENT STYLE) */
+.why-logo {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    transform: rotate(45deg);
+    border-radius: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.why-logo img {
+    transform: rotate(-45deg);
+    width: 70%;
+}
+
+/* GRID */
+.why-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+}
+
+/* CARDS */
+.why-card {
+    padding: 2rem 1.5rem;
+    border-radius: 22px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: 0.3s;
+    position: relative;
+}
+
+/* ICON */
+.why-card i {
+    font-size: 2.2rem;
+    color: var(--accent);
+    margin-bottom: 1rem;
+}
+
+/* TEXT */
+.why-card h3 {
+    margin-bottom: 0.6rem;
+}
+
+.why-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* HOVER PREMIUM */
+.why-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+}
+
+/* GLOW EFFECT */
+.why-section::before {
+    content: "";
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(46,125,100,0.15), transparent 70%);
+    top: -120px;
+    left: -100px;
+}
 /* ===== VISION SECTION ===== */
 .vision-section {
     position: relative;
@@ -925,62 +1005,139 @@
     padding: 5rem 0;
 }
 
+/* ===== PREMIUM SOLAR SIZE SECTION ===== */
+.solar-size-section {
+    position: relative;
+    background: radial-gradient(circle at top left, #eaf4ff, #ffffff 60%);
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+/* Glow background effect */
+.solar-size-section::before {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(46,125,100,0.15), transparent 70%);
+    top: -100px;
+    right: -100px;
+}
+
 /* GRID */
 .solar-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.8rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
 }
 
-/* CARD */
+/* CARD PREMIUM */
 .solar-card {
-    background: white;
-    padding: 2rem 1.5rem;
-    border-radius: 22px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    transition: 0.3s;
-    border: 1px solid rgba(0,0,0,0.04);
     position: relative;
+    padding: 2.2rem 1.6rem;
+    border-radius: 24px;
+    background: rgba(255,255,255,0.7);
+    backdrop-filter: blur(14px);
+    border: 1px solid rgba(255,255,255,0.4);
+    box-shadow: 0 10px 35px rgba(0,0,0,0.06);
+    transition: all 0.35s ease;
 }
 
-/* HOVER EFFECT */
+/* HOVER = PREMIUM FLOAT */
 .solar-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    transform: translateY(-12px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.12);
 }
 
-/* TOP TITLE */
+/* TOP POWER TEXT */
 .solar-top {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 800;
-    color: var(--accent);
+    color: var(--primary);
     margin-bottom: 1rem;
 }
 
-/* LIST */
-.solar-card ul {
-    list-style: none;
-    padding: 0;
+/* BADGE */
+.solar-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: linear-gradient(135deg, #2E7D64, #1abc9c);
+    color: white;
+    font-size: 0.7rem;
+    padding: 6px 10px;
+    border-radius: 50px;
+    font-weight: 600;
 }
 
+/* ICON STYLE (circle) */
+.solar-card ul li i {
+    background: rgba(46,125,100,0.1);
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 0.9rem;
+}
+
+/* LIST */
 .solar-card ul li {
     display: flex;
     align-items: center;
-    gap: 10px;
-    margin-bottom: 0.8rem;
-    color: var(--text-muted);
+    gap: 12px;
+    margin-bottom: 0.9rem;
     font-size: 0.95rem;
+    color: var(--text-muted);
 }
 
-/* ICON STYLE */
-.solar-card i {
-    color: var(--accent);
-}
-
-/* FEATURED CARD (center highlight) */
+/* FEATURED CARD (CENTER) */
 .solar-card.featured {
-    border: 2px solid var(--accent);
-    transform: scale(1.05);
+    background: linear-gradient(135deg, #0F2B3D, #2E7D64);
+    color: white;
+    transform: scale(1.06);
+    border: none;
+}
+
+.solar-card.featured .solar-top {
+    color: #fff;
+}
+
+.solar-card.featured ul li {
+    color: rgba(255,255,255,0.9);
+}
+
+.solar-card.featured i {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+}
+
+/* CTA BUTTON PREMIUM */
+.solar-cta {
+    margin-top: 3rem;
+    text-align: center;
+}
+
+.solar-cta .btn {
+    font-size: 1.05rem;
+    padding: 1rem 2.4rem;
+    border-radius: 60px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Shine animation */
+.solar-cta .btn::after {
+    content: "";
+    position: absolute;
+    width: 40%;
+    height: 100%;
+    background: rgba(255,255,255,0.4);
+    top: 0;
+    left: -100%;
+    transform: skewX(-25deg);
+}
+
+.solar-cta .btn:hover::after {
+    left: 120%;
+    transition: 0.6s;
 }
 .appliance-icon {
     width: 19px;              /* match Font Awesome visual size */
@@ -1207,6 +1364,7 @@
 
       <!-- 3 KW -->
       <div class="solar-card featured">
+        <div class="solar-badge">MOST POPULAR</div>
         <div class="solar-top">3 kW</div>
         <ul>
           <li><i class="fas fa-snowflake"></i> 1 Ton AC</li>
@@ -1265,7 +1423,7 @@
       </div>
 
     </div>
-<div style="text-align:center; margin-top:2.5rem;">
+<div class="solar-cta">
  <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%0A%0AI%20want%20a%20free%20Residential%20Solar%20System%20recommendation.%0A%0APlease%20guide%20me%20based%20on%20my%20home%20usage%20(2.4kW%20/%203kW%20/%205kW%20/%2010kW).%0A%0AThank%20you!" 
 class="btn btn-accent" target="_blank">
 Get Free System Recommendation
@@ -1329,21 +1487,9 @@ Get Free System Recommendation
     <a href="https://wa.me/923171720966?text=Hello%20UNI%20ELECTRIC!%20I%20want%20a%20free%20solar%20consultation%20and%20quotation.%20Please%20guide%20me." class="btn btn-accent">Get Free Consultation</a>
   </div>
 </section>       
-        <!-- Projects Gallery -->
-        <section id="projects" class="section-bg-light">
-            <div class="container">
-                <div class="fade-up" style="text-align: center;">
-                    <h2>Our Solar & Electrical Portfolio</h2>
-                    <div class="section-subhead">Real installations across Pakistan — proven performance.</div>
-                </div>
-                <div class="projects-grid fade-up">
-                    <div class="project-card"><img src="https://placehold.co/600x400/2E7D64/white?text=Commercial+Solar" alt="Project"><h3>Green Horizon Tower</h3><div class="project-location">Lahore | 120kW On-Grid</div><p>Annual energy savings 180,000 kWh, net metering approved.</p></div>
-                    <div class="project-card"><img src="https://placehold.co/600x400/F5A623/white?text=Industrial+Solar" alt="Project"><h3>Faisalabad Textile Mills</h3><div class="project-location">Faisalabad | 350kW Hybrid</div><p>Reduced diesel dependency, 45% lower energy costs.</p></div>
-                    <div class="project-card"><img src="https://placehold.co/600x400/0F2B3D/white?text=Residential+Solar" alt="Project"><h3>Defence Residencia</h3><div class="project-location">Karachi | 25kW Off-grid</div><p>Complete backup with lithium batteries & smart monitoring.</p></div>
-                    <div class="project-card"><img src="https://placehold.co/600x400/2E7D64/white?text=Switchgear" alt="Switchgear"><h3>Industrial Switchgear</h3><div class="project-location">Lahore | LV Panel Fabrication</div><p>Custom assembly & protection for automotive factory.</p></div>
-                </div>
+        
                 <!-- Premium Image Gallery Section -->
-<section id="gallery">
+<section id="projects">
     <div class="container">
         
         <div class="fade-up" style="text-align:center;">
@@ -1399,6 +1545,64 @@ Get Free System Recommendation
                 </div>
             </div>
         </section>
+
+        <section class="why-section">
+  <div class="container">
+
+    <!-- Floating Diamond Logo -->
+    <div class="why-logo">
+      <img src="image/unielectric logo.webp" alt="UNI ELECTRIC">
+    </div>
+
+    <div class="why-content fade-up">
+      <h2>Why Choose UNI ELECTRIC?</h2>
+      <p class="section-subhead">
+        Trusted by homeowners, industries, and businesses across Pakistan — 
+        delivering reliable, high-performance solar solutions with guaranteed results.
+      </p>
+    </div>
+
+    <div class="why-grid fade-up">
+
+      <div class="why-card">
+        <i class="fas fa-certificate"></i>
+        <h3>Certified & Trusted</h3>
+        <p>SMC-Private Limited company with certified engineers and industry expertise.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-bolt"></i>
+        <h3>High Performance Systems</h3>
+        <p>Tier-1 solar panels with advanced inverters ensuring maximum efficiency.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-wallet"></i>
+        <h3>Maximum ROI</h3>
+        <p>Reduce electricity bills up to 80% with optimized system design.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-user-shield"></i>
+        <h3>Complete Transparency</h3>
+        <p>No hidden costs, clear pricing, and honest consultation.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-tools"></i>
+        <h3>End-to-End Service</h3>
+        <p>From design to installation & maintenance — everything handled.</p>
+      </div>
+
+      <div class="why-card">
+        <i class="fas fa-headset"></i>
+        <h3>24/7 Support</h3>
+        <p>Dedicated support team for maintenance and system monitoring.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         <!-- Customer Reviews & Video/Image Section -->
         <section id="reviews">
