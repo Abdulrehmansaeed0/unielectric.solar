@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="UNI ELECTRIC provides premium solar and electrical solutions across Pakistan. Offices in Lahore and Faisalabad. Contact us for solar installation and net metering services.">
     <title>UNI ELECTRIC | Premium Solar & Electrical Solutions Pakistan</title>
     <!-- Google Fonts & Font Awesome -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -385,6 +386,7 @@
     left: -100px;
 }
 /* ===== VISION SECTION ===== */
+/* ===== VISION SECTION (CLEAN + SWIPE ENABLED) ===== */
 .vision-section {
     position: relative;
     padding: 6rem 0 4rem;
@@ -394,9 +396,8 @@
     overflow: hidden;
 }
 
-/* Floating Circle Logo */
+/* Logo */
 .vision-logo {
-    position: relative;
     margin: 0 auto 1.5rem;
     background: white;
     width: 90px;
@@ -415,7 +416,7 @@
     border-radius: 50%;
 }
 
-/* Content */
+/* Text */
 .vision-content h2 {
     color: white;
     margin-top: 2rem;
@@ -428,13 +429,14 @@
     font-size: 1.1rem;
 }
 
-/* Cards */
+/* GRID (DESKTOP) */
 .vision-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 1.5rem;
 }
 
+/* CARD */
 .vision-card {
     background: rgba(255,255,255,0.08);
     backdrop-filter: blur(10px);
@@ -449,31 +451,113 @@
     color: #F5A623;
 }
 
-.vision-card h3 {
-    margin-bottom: 0.5rem;
-}
-
 .vision-card p {
     font-size: 0.9rem;
     color: rgba(255,255,255,0.8);
 }
 
-/* Hover */
+/* HOVER */
 .vision-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255,255,255,0.15);
+    transform: translateY(-6px);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.12);
+}
+/* ===== LICENSE SECTION ===== */
+/* SIMPLE LICENSE STRIP */
+.license-strip {
+    padding: 2rem 0;
+    background: #fff;
 }
 
-/* Mobile */
+.license-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.license-logos img {
+    height: 50px;
+    opacity: 1;
+    transition: 0.3s ease;
+}
+
+/* hover = premium feel */
+.license-logos img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+.license-badge {
+    text-align: center;
+    display: block;
+    margin: 0 auto 1.2rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px;
+    background: rgba(46,125,100,0.1);
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+/* mobile */
 @media (max-width: 768px) {
-    .vision-logo {
-        width: 70px;
-        height: 70px;
-        top: -35px;
+    .license-logos {
+        gap: 1.5rem;
+    }
+
+    .license-logos img {
+        height: 40px;
+    }
+}
+/* ===== MOBILE SWIPE ===== */
+/* ===== MOBILE SQUARE CARDS ===== */
+/* ===== MOBILE SWIPE ===== */
+@media (max-width: 768px) {
+
+    .vision-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 1rem;
+        scroll-snap-type: x mandatory;
+        padding-bottom: 10px;
     }
 
     .vision-text {
         font-size: 0.95rem;
+        line-height: 1.6;
+        max-width: 90%;
+        margin: 1rem auto 2rem;
+    }
+
+    .vision-card {
+        min-width: 80%;
+        aspect-ratio: 2 / 1;
+        padding: 1.5rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        scroll-snap-align: center;
+    }
+
+    .vision-card i {
+        font-size: 3.2rem;
+    }
+
+    .vision-card h3 {
+        margin-top: 0.5rem;
+    }
+
+    .vision-card p {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        padding: 0 10px;
+    }
+
+    .vision-grid::-webkit-scrollbar {
+        display: none;
     }
 }
         /* Cards */
@@ -1279,6 +1363,32 @@
                 </div>
             </div>
         </section>
+
+        <!-- LICENSED SECTION -->
+<!-- LICENSE LOGOS (SIMPLE) -->
+<section class="license-strip">
+  <div class="container">
+<p style="text-align:center; font-size:1.25rem; color:#043909; margin-bottom:1rem;">
+Licensed & Registered
+</p>
+    <div class="license-logos">
+      <img src="image/fbr-logo.webp" alt="FBR">
+      <img src="image/secp logo.webp" alt="SECP">
+      <img src="image/PRA logo.webp" alt="PRA">
+      <img src="image/pec-logo.webp" alt="PEC">
+      <img src="image/AEDB_logo.webp" alt="AEDB">
+      
+    </div>
+
+  </div>
+</section>
+    </div>
+<div class="license-badge">
+  ✔ Government Registered • ✔ Tax Compliant • ✔ Verified Business
+</div>
+  </div>
+</section>
+
 <section id="vision" class="vision-section">
     <div class="container">
 
@@ -1608,7 +1718,7 @@ Get Free System Recommendation
         <section id="reviews">
             <div class="container">
                 <div class="fade-up" style="text-align: center;">
-                    <h2>Customer Love</h2>
+                    <h2>Clients Reviews</h2>
                     <div class="section-subhead">Trusted by homeowners, businesses, and industries across Pakistan.</div>
                 </div>
                <div class="testimonial-slider fade-up">
@@ -1811,13 +1921,49 @@ Get Free System Recommendation
 
         <!-- FAQ -->
         <section class="container" id="faq" style="padding: 2rem 0 4rem 0;">
-            <div class="fade-up" style="text-align: center;"><h2>Frequently Asked Questions</h2></div>
-            <div class="faq-grid fade-up">
-                <div class="faq-item"><div class="faq-question">How does net metering work in Pakistan? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">We handle all LESCO/MEPCO documentation, install bi-directional meters, and ensure you get credits for excess solar energy exported to the grid.</div></div>
-                <div class="faq-item"><div class="faq-question">What is the payback period for solar? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Typically 3-5 years based on current electricity rates, with system lifespan exceeding 25 years.</div></div>
-                <div class="faq-item"><div class="faq-question">Do you provide maintenance services? <i class="fas fa-chevron-down"></i></div><div class="faq-answer">Yes, AMC plans available for panel cleaning, inverter checks, and full electrical safety audits.</div></div>
-            </div>
-        </section>
+    <div class="fade-up" style="text-align: center;">
+        <h2>Frequently Asked Questions</h2>
+    </div>
+
+    <div class="faq-grid fade-up">
+
+        <div class="faq-item">
+            <div class="faq-question">How does net metering work in Pakistan? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Net metering allows you to send extra solar electricity back to the grid (LESCO/MEPCO) and receive credits on your bill. We handle complete approval and installation process.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How much can I reduce my electricity bill with solar? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Most customers in Pakistan reduce their bill by 60% to 90% depending on system size and usage pattern.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What is the average installation time? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Residential solar systems are usually installed within 2 to 5 days after approval and site inspection.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What happens during load shedding? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">If you have a hybrid system with batteries, your home will continue to run normally during load shedding without interruption.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Do solar panels work in cloudy or winter weather? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes, solar panels still generate electricity in cloudy weather, though output may drop slightly compared to sunny days.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is government approval required for net metering? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">Yes, but we manage all approvals from NEPRA and your local DISCO (LESCO/MEPCO) for a hassle-free process.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What warranty do you provide? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">We provide 10–25 years panel warranty and 5–10 years inverter warranty depending on the brand used.</div>
+        </div>
+
+    </div>
+</section>
     </main>
 
     <footer>
@@ -1960,5 +2106,19 @@ window.addEventListener("resize", init);
 init();
 
     </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ElectricalContractor",
+  "name": "UNI ELECTRIC",
+  "url": "https://unielectric.netlify.app",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Lahore",
+    "addressCountry": "PK"
+  },
+  "areaServed": ["Lahore", "Faisalabad"]
+}
+</script>
 </body>
 </html>
